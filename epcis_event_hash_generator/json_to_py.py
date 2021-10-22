@@ -150,11 +150,11 @@ def event_list_from_epcis_document_json(json_obj):
     if not(json_obj.get("@context") is None):
         _collect_namespaces_from_jsonld_context(json_obj["@context"])
 
-    if "eventList" in json_obj["epcisBody"]:
+    if "epcisBody" in json_obj and "eventList" in json_obj["epcisBody"]:
         event_list = json_obj["epcisBody"]["eventList"]
     else:
-        # epcisBody may contain single event
-        event_list = [json_obj["epcisBody"]["event"]]
+        # JSON document may contain a bare event
+        event_list = [json_obj]
 
     events = []
 
