@@ -23,6 +23,17 @@ def file_document_loader(secure=False, **kwargs):
     """
     from pyld import jsonld
 
+    # 2.0.1 shares a file with the unversioned URL: the two serve one and the
+    # same document, byte for byte, and the filename is the sha256 of the
+    # content. Nothing emits the 2.0.1 URL today -- GS1 leaves the version off
+    # the current release, so the unversioned URL IS 2.0.1. The day a 2.0.2
+    # appears, the unversioned URL moves on and anything still pinned to 2.0.1
+    # would quietly start reaching for the network.
+    #
+    # Not to be confused with 2.0.0, which is a different document: it binds the
+    # `gs1` prefix to the deprecated https://gs1.org/voc/, where 2.0.1 and the
+    # unversioned context bind it to https://ref.gs1.org/voc/. A `gs1:` CURIE
+    # expands to a different IRI under each, so those two keep separate files.
     context_file_hashes = {
         "https://gs1.github.io/EPCIS/epcis-context.jsonld":
         "14b10c9d3e92d35f577bfc610fe5ec15aa2941124987919389d7cd9998516861.jsonld",
@@ -31,6 +42,8 @@ def file_document_loader(secure=False, **kwargs):
         "https://eecc.de/global_2025-09-26.jsonld":
         "d7b7387ef0ea28c725046d7c491218f0d765e84b58199cb4c1896516157f4fbb.jsonld",
         "https://ref.gs1.org/standards/epcis/epcis-context.jsonld":
+        "5056c65f991425b1d3a35e35edf4f7d0c7ff56cf688c2912b930f93494713737.jsonld",
+        "https://ref.gs1.org/standards/epcis/2.0.1/epcis-context.jsonld":
         "5056c65f991425b1d3a35e35edf4f7d0c7ff56cf688c2912b930f93494713737.jsonld",
         "https://ref.gs1.org/standards/epcis/2.1.0/epcis-context.jsonld":
         "e8da7b13521f6ea2f469f7634086538575da899873055dda151997c72803fe1e.jsonld"
