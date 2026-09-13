@@ -2,6 +2,9 @@
 
 ## WIP
 
+## 1.10.0 (2026-09-13)
+
+- Offline document loader: carry the current EPCIS context (`.../standards/epcis/epcis-context.jsonld`) and `2.0.1`, which serve the same document; a URL the map does not know falls through to the network and fails outright where outbound HTTP is blocked
 - Added configurable CBV version support: new `-v/--version` CLI flag allows choosing between CBV2.0 (default) and CBV2.1 for hash generation
 - Implemented version-specific timestamp precision handling: CBV2.0 preserves high precision timestamps without rounding, CBV2.1 rounds to 3-digit millisecond precision
 - EPCIS 2.1 change: always add implicit JSONLD context (namespace) `{"gs1": "https://ref.gs1.org/voc/"}`
