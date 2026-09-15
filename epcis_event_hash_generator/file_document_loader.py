@@ -23,17 +23,10 @@ def file_document_loader(secure=False, **kwargs):
     """
     from pyld import jsonld
 
-    # 2.0.1 shares a file with the unversioned URL: the two serve one and the
-    # same document, byte for byte, and the filename is the sha256 of the
-    # content. Nothing emits the 2.0.1 URL today -- GS1 leaves the version off
-    # the current release, so the unversioned URL IS 2.0.1. The day a 2.0.2
-    # appears, the unversioned URL moves on and anything still pinned to 2.0.1
-    # would quietly start reaching for the network.
-    #
-    # Not to be confused with 2.0.0, which is a different document: it binds the
-    # `gs1` prefix to the deprecated https://gs1.org/voc/, where 2.0.1 and the
-    # unversioned context bind it to https://ref.gs1.org/voc/. A `gs1:` CURIE
-    # expands to a different IRI under each, so those two keep separate files.
+    # 2.0.1 and the unversioned URL serve the same document, so they share one file (named by its sha256).
+    # The unversioned URL follows the latest release, so every superseded version needs its own pinned entry.
+    # 2.0.0 is the exception: GS1 serves it binding gs1 to the deprecated https://gs1.org/voc/, but the copy
+    # bundled here was deliberately replaced with the corrected context (3e27c21), so it expands like 2.0.1.
     context_file_hashes = {
         "https://gs1.github.io/EPCIS/epcis-context.jsonld":
         "14b10c9d3e92d35f577bfc610fe5ec15aa2941124987919389d7cd9998516861.jsonld",
