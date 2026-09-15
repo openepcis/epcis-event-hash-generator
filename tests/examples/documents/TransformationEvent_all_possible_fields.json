@@ -9,9 +9,6 @@
     },
     {
       "ext1": "http://example.com/ext1/"
-    },
-    {
-      "cbvmda": "http://example.com/cbvmda/"
     }
   ],
   "type": "EPCISDocument",
