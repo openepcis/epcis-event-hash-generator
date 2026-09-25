@@ -15,7 +15,7 @@ def _assert_xml_json_match(event_type, cbv_version):
     xml_hashes, xml_prehashes = epcis_hash_from_file(
         DOCUMENTS_PATH + event_type + "_all_possible_fields.xml", cbv_version=cbv_version)
     json_hashes, json_prehashes = epcis_hash_from_file(
-        DOCUMENTS_PATH + event_type + "_all_possible_fields.json", cbv_version=cbv_version)
+        DOCUMENTS_PATH + event_type + "_all_possible_fields.jsonld", cbv_version=cbv_version)
     assert xml_prehashes == json_prehashes, \
         "{} {}: XML and JSON pre-hash strings differ".format(event_type, cbv_version)
     assert xml_hashes == json_hashes, \
