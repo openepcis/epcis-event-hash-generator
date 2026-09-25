@@ -184,17 +184,17 @@
                         </ext2:object>
                         <ext2:string>stringInObject</ext2:string>
                     </ext1:object>
-                    <ns0:countryOfExport xmlns:ns0="http://example.com/cbvmda/">KR</ns0:countryOfExport>
-                    <ns3:grossWeight xmlns:ns3="http://example.com/cbvmda/">3.5</ns3:grossWeight>
+                    <ns0:countryOfExport xmlns:ns0="urn:epcglobal:cbv:mda">KR</ns0:countryOfExport>
+                    <ns3:grossWeight xmlns:ns3="urn:epcglobal:cbv:mda">3.5</ns3:grossWeight>
                     <ext1:int>10</ext1:int>
-                    <ns4:netWeight xmlns:ns4="http://example.com/cbvmda/">3.5</ns4:netWeight>
+                    <ns4:netWeight xmlns:ns4="urn:epcglobal:cbv:mda">3.5</ns4:netWeight>
                     <ext1:time>2013-06-08T14:58:56.591Z</ext1:time>
                     <ext1:boolean>true</ext1:boolean>
                     <ext1:default>stringAsDefaultValue</ext1:default>
                     <ext1:string>string</ext1:string>
-                    <ns5:countryOfOrigin xmlns:ns5="http://example.com/cbvmda/">GB</ns5:countryOfOrigin>
-                    <ns6:drainedWeight xmlns:ns6="http://example.com/cbvmda/">3.5</ns6:drainedWeight>
-                    <ns7:lotNumber xmlns:ns7="http://example.com/cbvmda/">ABC123</ns7:lotNumber>
+                    <ns5:countryOfOrigin xmlns:ns5="urn:epcglobal:cbv:mda">GB</ns5:countryOfOrigin>
+                    <ns6:drainedWeight xmlns:ns6="urn:epcglobal:cbv:mda">3.5</ns6:drainedWeight>
+                    <ns7:lotNumber xmlns:ns7="urn:epcglobal:cbv:mda">ABC123</ns7:lotNumber>
                 </ilmd>
                 <ext1:float>20</ext1:float>
                 <ext1:time>2013-06-08T14:58:56.591Z</ext1:time>

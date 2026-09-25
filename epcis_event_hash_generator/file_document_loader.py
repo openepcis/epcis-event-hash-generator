@@ -23,6 +23,10 @@ def file_document_loader(secure=False, **kwargs):
     """
     from pyld import jsonld
 
+    # 2.0.1 and the unversioned URL serve the same document, so they share one file (named by its sha256).
+    # The unversioned URL follows the latest release, so every superseded version needs its own pinned entry.
+    # 2.0.0 is the exception: GS1 serves it binding gs1 to the deprecated https://gs1.org/voc/, but the copy
+    # bundled here was deliberately replaced with the corrected context (3e27c21), so it expands like 2.0.1.
     context_file_hashes = {
         "https://gs1.github.io/EPCIS/epcis-context.jsonld":
         "14b10c9d3e92d35f577bfc610fe5ec15aa2941124987919389d7cd9998516861.jsonld",
@@ -31,6 +35,8 @@ def file_document_loader(secure=False, **kwargs):
         "https://eecc.de/global_2025-09-26.jsonld":
         "d7b7387ef0ea28c725046d7c491218f0d765e84b58199cb4c1896516157f4fbb.jsonld",
         "https://ref.gs1.org/standards/epcis/epcis-context.jsonld":
+        "5056c65f991425b1d3a35e35edf4f7d0c7ff56cf688c2912b930f93494713737.jsonld",
+        "https://ref.gs1.org/standards/epcis/2.0.1/epcis-context.jsonld":
         "5056c65f991425b1d3a35e35edf4f7d0c7ff56cf688c2912b930f93494713737.jsonld",
         "https://ref.gs1.org/standards/epcis/2.1.0/epcis-context.jsonld":
         "e8da7b13521f6ea2f469f7634086538575da899873055dda151997c72803fe1e.jsonld"
